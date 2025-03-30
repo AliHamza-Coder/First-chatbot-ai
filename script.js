@@ -16,17 +16,17 @@ document.addEventListener("DOMContentLoaded", () => {
       const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
         method: "POST",
         headers: {
-          "Authorization": "Bearer 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", // Replace with a securely stored key
+          "Authorization": "Bearer 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", // Replace with a securely stored key
           "Content-Type": "application/json"
         },
         body: JSON.stringify({
-          "model": "deepseek/deepseek-chat-v3-0324:free",
+          "model": "google/gemini-2.5-pro-exp-03-25:free",
           "messages": [{ "role": "user", "content": message }]
         })
       });
 
       const data = await response.json();
-      // console.log("API Response:", data);
+      console.log("API Response:", data); // Log response for debugging
 
       if (!response.ok) {
         return `Error: ${data.error?.message || "Something went wrong."}`;

@@ -13,14 +13,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   async function getAIResponse(message) {
     try {
-      const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
+      const response = await fetch("https://api.groq.com/openai/v1/chat/completions", {
         method: "POST",
         headers: {
-          "Authorization": "Bearer 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", // Replace with a securely stored key
+          "Authorization": "Bearer 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", // Replace with a securely stored key
           "Content-Type": "application/json"
         },
         body: JSON.stringify({
-          "model": "google/gemini-2.5-pro-exp-03-25:free",
+          "model": "llama-3.3-70b-versatile",
           "messages": [{ "role": "user", "content": message }]
         })
       });
